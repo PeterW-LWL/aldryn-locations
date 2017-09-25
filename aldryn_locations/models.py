@@ -18,7 +18,7 @@ GOOGLE_MAPS_STATICMAPS_URL = getattr(
     'ALDRYN_LOCATIONS_GOOGLEMAPS_STATICMAPS_URL',
     'https://maps.googleapis.com/maps/api/staticmap',
 )
-MARKER_CONTENT_FORMAT = unicode(settings.ALDRYN_LOCATIONS_MARKER_CONTENT_FORMAT)
+MARKER_CONTENT_FORMAT = str(settings.ALDRYN_LOCATIONS_MARKER_CONTENT_FORMAT)
 ZOOM_LEVELS = [(str(level), str(level)) for level in range(22)]
 
 ROADMAP = 'roadmap'
