@@ -7,6 +7,7 @@ CHANGELOG
 * Fix unicode error in python 3
 * Fix for 'query' field not used in model for Django 1.11
 * Fix leaking the admin url when accessed without login
+* Add 'on_delete=models.CASCADE' required for Django 2.0
 
 
 1.1.3 (2016-10-11)

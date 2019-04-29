@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.db import migrations, models
+import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
@@ -14,36 +15,36 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='embeddirectionsplugin',
             name='cmsplugin_ptr',
-            field=models.OneToOneField(parent_link=True, related_name='aldryn_locations_embeddirectionsplugin', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE),
+            field=models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, parent_link=True, related_name='aldryn_locations_embeddirectionsplugin', primary_key=True, serialize=False, to='cms.CMSPlugin'),
         ),
         migrations.AlterField(
             model_name='embedplaceplugin',
             name='cmsplugin_ptr',
-            field=models.OneToOneField(parent_link=True, related_name='aldryn_locations_embedplaceplugin', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE),
+            field=models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, parent_link=True, related_name='aldryn_locations_embedplaceplugin', primary_key=True, serialize=False, to='cms.CMSPlugin'),
         ),
         migrations.AlterField(
             model_name='embedsearchplugin',
             name='cmsplugin_ptr',
-            field=models.OneToOneField(parent_link=True, related_name='aldryn_locations_embedsearchplugin', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE),
+            field=models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, parent_link=True, related_name='aldryn_locations_embedsearchplugin', primary_key=True, serialize=False, to='cms.CMSPlugin'),
         ),
         migrations.AlterField(
             model_name='embedviewplugin',
             name='cmsplugin_ptr',
-            field=models.OneToOneField(parent_link=True, related_name='aldryn_locations_embedviewplugin', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE),
+            field=models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, parent_link=True, related_name='aldryn_locations_embedviewplugin', primary_key=True, serialize=False, to='cms.CMSPlugin'),
         ),
         migrations.AlterField(
             model_name='locationplugin',
             name='cmsplugin_ptr',
-            field=models.OneToOneField(parent_link=True, related_name='aldryn_locations_locationplugin', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE),
+            field=models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, parent_link=True, related_name='aldryn_locations_locationplugin', primary_key=True, serialize=False, to='cms.CMSPlugin'),
         ),
         migrations.AlterField(
             model_name='mapplugin',
             name='cmsplugin_ptr',
-            field=models.OneToOneField(parent_link=True, related_name='aldryn_locations_mapplugin', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE),
+            field=models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, parent_link=True, related_name='aldryn_locations_mapplugin', primary_key=True, serialize=False, to='cms.CMSPlugin'),
         ),
         migrations.AlterField(
             model_name='pathlocationplugin',
             name='cmsplugin_ptr',
-            field=models.OneToOneField(parent_link=True, related_name='aldryn_locations_pathlocationplugin', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE),
+            field=models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, parent_link=True, related_name='aldryn_locations_pathlocationplugin', primary_key=True, serialize=False, to='cms.CMSPlugin'),
         ),
     ]
