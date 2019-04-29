@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+1.1.4 (2019-04-29)
+------------------
+
+* Add 'on_delete=models.CASCADE' required for Django 2.0
+
 
 1.1.3 (2016-10-11)
 ------------------
