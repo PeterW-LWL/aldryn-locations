@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.db import migrations, models
+import django.db.models.deletion
 import filer.fields.file
 
 
@@ -17,7 +18,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='PathLocationPlugin',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='aldryn_locations_pathlocationplugin', auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, parent_link=True, related_name='aldryn_locations_pathlocationplugin', auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
                 ('path_file', filer.fields.file.FilerFileField(related_name='+', verbose_name='Path File (e.g. KML)', to='filer.File')),
             ],
             options={

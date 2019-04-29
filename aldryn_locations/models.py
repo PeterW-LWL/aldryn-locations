@@ -43,6 +43,7 @@ class MapPlugin(CMSPlugin):
         CMSPlugin,
         related_name='%(app_label)s_%(class)s',
         parent_link=True,
+        on_delete=models.CASCADE,
     )
 
     title = models.CharField(_("map title"), max_length=255, blank=True,
@@ -165,6 +166,7 @@ class LocationPlugin(CMSPlugin):
         CMSPlugin,
         related_name='%(app_label)s_%(class)s',
         parent_link=True,
+        on_delete=models.CASCADE,
     )
 
     address = models.CharField(_("address"), max_length=255)
@@ -228,6 +230,7 @@ class PathLocationPlugin(CMSPlugin):
         CMSPlugin,
         related_name='%(app_label)s_%(class)s',
         parent_link=True,
+        on_delete=models.CASCADE,
     )
 
     path_file = FilerFileField(
@@ -257,6 +260,7 @@ class EmbedPlugin(CMSPlugin):
         CMSPlugin,
         related_name='%(app_label)s_%(class)s',
         parent_link=True,
+        on_delete=models.CASCADE,
     )
 
     query = models.CharField(

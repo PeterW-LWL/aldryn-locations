@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.db import migrations, models
+import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
@@ -14,7 +15,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='EmbedDirectionsPlugin',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
                 ('query', models.CharField(help_text='defines the place to highlight on the map. It accepts a location as either a place name or address', max_length=255, verbose_name='Query')),
                 ('map_type', models.CharField(default=b'roadmap', max_length=300, verbose_name='Map Type', choices=[(b'roadmap', 'Roadmap'), (b'satellite', 'Satellite')])),
                 ('center', models.CharField(help_text='optionally define the center of the map view. It accepts a comma-separated latitude and longitude value (such as 37.4218,-122.0840).', max_length=255, null=True, verbose_name='Center of the map (latitude + longitude)', blank=True)),
@@ -38,7 +39,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='EmbedPlacePlugin',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
                 ('query', models.CharField(help_text='defines the place to highlight on the map. It accepts a location as either a place name or address', max_length=255, verbose_name='Query')),
                 ('map_type', models.CharField(default=b'roadmap', max_length=300, verbose_name='Map Type', choices=[(b'roadmap', 'Roadmap'), (b'satellite', 'Satellite')])),
                 ('center', models.CharField(help_text='optionally define the center of the map view. It accepts a comma-separated latitude and longitude value (such as 37.4218,-122.0840).', max_length=255, null=True, verbose_name='Center of the map (latitude + longitude)', blank=True)),
@@ -56,7 +57,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='EmbedSearchPlugin',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
                 ('query', models.CharField(help_text='defines the place to highlight on the map. It accepts a location as either a place name or address', max_length=255, verbose_name='Query')),
                 ('map_type', models.CharField(default=b'roadmap', max_length=300, verbose_name='Map Type', choices=[(b'roadmap', 'Roadmap'), (b'satellite', 'Satellite')])),
                 ('center', models.CharField(help_text='optionally define the center of the map view. It accepts a comma-separated latitude and longitude value (such as 37.4218,-122.0840).', max_length=255, null=True, verbose_name='Center of the map (latitude + longitude)', blank=True)),
@@ -74,7 +75,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='EmbedViewPlugin',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
                 ('query', models.CharField(help_text='defines the place to highlight on the map. It accepts a location as either a place name or address', max_length=255, verbose_name='Query')),
                 ('map_type', models.CharField(default=b'roadmap', max_length=300, verbose_name='Map Type', choices=[(b'roadmap', 'Roadmap'), (b'satellite', 'Satellite')])),
                 ('center', models.CharField(help_text='optionally define the center of the map view. It accepts a comma-separated latitude and longitude value (such as 37.4218,-122.0840).', max_length=255, null=True, verbose_name='Center of the map (latitude + longitude)', blank=True)),
@@ -92,7 +93,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='LocationPlugin',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
                 ('address', models.CharField(max_length=150, verbose_name='address')),
                 ('zipcode', models.CharField(max_length=30, verbose_name='zip code')),
                 ('city', models.CharField(max_length=100, verbose_name='city')),
@@ -108,7 +109,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='MapPlugin',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
                 ('title', models.CharField(max_length=100, null=True, verbose_name='map title', blank=True)),
                 ('zoom', models.CharField(choices=[(b'0', b'0'), (b'1', b'1'), (b'2', b'2'), (b'3', b'3'), (b'4', b'4'), (b'5', b'5'), (b'6', b'6'), (b'7', b'7'), (b'8', b'8'), (b'9', b'9'), (b'10', b'10'), (b'11', b'11'), (b'12', b'12'), (b'13', b'13'), (b'14', b'14'), (b'15', b'15'), (b'16', b'16'), (b'17', b'17'), (b'18', b'18'), (b'19', b'19'), (b'20', b'20'), (b'21', b'21')], max_length=20, blank=True, help_text='Leave empty for auto zoom', null=True, verbose_name='Zoom level')),
                 ('route_planner_title', models.CharField(default='Calculate your fastest way to here', max_length=150, null=True, verbose_name='Route Planner Title', blank=True)),
@@ -131,7 +132,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='RouteLocationPlugin',
             fields=[
-                ('locationplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='aldryn_locations.LocationPlugin')),
+                ('locationplugin_ptr', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, parent_link=True, auto_created=True, primary_key=True, serialize=False, to='aldryn_locations.LocationPlugin')),
             ],
             options={
                 'abstract': False,
