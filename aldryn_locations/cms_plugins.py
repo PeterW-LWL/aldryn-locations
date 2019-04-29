@@ -56,6 +56,12 @@ class MapCMSPlugin(LocationsBase):
                     data = '{}{}'.format(base_url, data)
                 path_sources.append(data)
             else:
+                if not request.toolbar or not (
+                    getattr(request.toolbar, 'edit_mode')
+                    or getattr(request.toolbar, 'edit_mode_active')
+                ):
+                    # do not leak /admin urls
+                    data['admin'] = None
                 location_data.append(data)
 
         # Options for the map comes from plugin so I assigned it here
