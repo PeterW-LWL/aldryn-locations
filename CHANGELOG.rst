@@ -1,35 +1,43 @@
 CHANGELOG
 =========
 
+1.1.6 (2020-09-11)
+------------------
+
+* Fix leaking the `/admin` url when accessed without login
+
+
 1.1.5 (2019-07-08)
 ------------------
 
-* remove python_2_unicode_compatible required for Django 2.2
+* Remove python_2_unicode_compatible required for Django 2.2
 
 
 1.1.4 (2019-04-29)
 ------------------
 
 * Add 'on_delete=models.CASCADE' required for Django 2.0
+* Fix unicode error in python 3
+* Fix for 'query' field not used in model for Django 1.11
 
 
 1.1.3 (2016-10-11)
 ------------------
 
-* fix unicode error in location plugin
-* fix error introduced in 1.1.2 (commit f76dedd7)
+* Fix unicode error in location plugin
+* Fix error introduced in 1.1.2 (commit f76dedd7)
 
 
 1.1.2 (2016-10-11)
 ------------------
 
-* path location plugin: fix absolute url
+* Path location plugin: fix absolute url
 
 
 1.1.1 (2016-09-14)
 ------------------
 
-* fix staticmap with new kml location plugin
+* Fix staticmap with new kml location plugin
 
 
 1.1.0 (2016-09-14)
