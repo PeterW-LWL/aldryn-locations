@@ -7,7 +7,7 @@ from django.urls import reverse
 
 from cms.models import CMSPlugin, Site
 from cms.utils.i18n import get_current_language
-from cms.utils.compat.dj import python_2_unicode_compatible
+from six import python_2_unicode_compatible
 
 from filer.fields.file import FilerFileField
 
