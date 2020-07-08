@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
             name='PathLocationPlugin',
             fields=[
                 ('cmsplugin_ptr', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, parent_link=True, related_name='aldryn_locations_pathlocationplugin', auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
-                ('path_file', filer.fields.file.FilerFileField(related_name='+', verbose_name='Path File (e.g. KML)', to='filer.File')),
+                ('path_file', filer.fields.file.FilerFileField(on_delete=django.db.models.deletion.CASCADE, related_name='+', verbose_name='Path File (e.g. KML)', to='filer.File')),
             ],
             options={
                 'abstract': False,
