@@ -1,6 +1,19 @@
 CHANGELOG
 =========
 
+1.1.6 (unreleased)
+------------------
+
+* TODO
+
+
+1.1.5 (2019-07-08)
+------------------
+
+* Fix missing 'on_delete' in migrations
+* Fix import of 'six'
+
+
 1.1.4 (2019-04-29)
 ------------------
 
