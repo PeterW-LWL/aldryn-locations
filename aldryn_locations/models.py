@@ -7,7 +7,6 @@ from django.urls import reverse
 
 from cms.models import CMSPlugin, Site
 from cms.utils.i18n import get_current_language
-from cms.utils.compat.dj import python_2_unicode_compatible
 
 from filer.fields.file import FilerFileField
 
@@ -37,7 +36,6 @@ EXTENDED_MAP_CHOICES = MAP_CHOICES + [
 ]
 
 
-@python_2_unicode_compatible
 class MapPlugin(CMSPlugin):
     cmsplugin_ptr = models.OneToOneField(
         CMSPlugin,
@@ -158,7 +156,6 @@ class MapPlugin(CMSPlugin):
         return False
 
 
-@python_2_unicode_compatible
 class LocationPlugin(CMSPlugin):
     route_planner = False
 

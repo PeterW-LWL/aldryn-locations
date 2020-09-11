@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+1.1.5 (2019-07-08)
+------------------
+
+* remove python_2_unicode_compatible required for Django 2.2
+
+
 1.1.4 (2019-04-29)
 ------------------
 
