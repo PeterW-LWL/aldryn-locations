@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+1.1.7 (2021-01-20)
+------------------
+
+* Add escape of single quotes `'` in `location` data field
+
+
 1.1.6 (2020-09-11)
 ------------------
 

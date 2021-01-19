@@ -84,7 +84,7 @@ class MapCMSPlugin(LocationsBase):
             'object': instance,
             'zoom': instance.zoom if instance.zoom else 'false',
             'placeholder': placeholder,
-            'locations': json.dumps(location_data),
+            'locations': json.dumps(location_data).replace("'", "&#39;"),
             'path_sources': json.dumps(path_sources),
             'options': json.dumps(options),
             'map_type': json.dumps(instance.map_type),
